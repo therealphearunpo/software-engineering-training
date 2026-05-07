@@ -1,6 +1,6 @@
 Day 2 notes
 
-Today I practiced JavaScript basics and tried to explain my thinking better.
+Today I practiced JavaScript basics and focused more on showing my thinking before coding.
 
 Topics:
 - variables
@@ -14,9 +14,10 @@ Topics:
 How I should think before coding:
 1. Read the question first.
 2. Break the problem into small steps.
-3. Decide what variable I need.
-4. Use loop or condition if needed.
-5. Test the answer.
+3. Think about edge cases before writing code.
+4. Decide what variables, loops, or conditions I need.
+5. Simulate the logic with a small example.
+6. Test the answer after coding.
 
 Difficulty:
 - Easy = basic checking
@@ -25,4 +26,8 @@ Difficulty:
 
 Important note:
 I should not write only code.
-I should also show my idea and steps in comments.
+I should also show:
+- the problem
+- the steps
+- the edge cases
+- the reason for my final answer

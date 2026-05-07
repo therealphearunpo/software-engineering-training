@@ -13,11 +13,11 @@ Answer:
 ReferenceError: Cannot access 'a' before initialization
 
 Why:
-Step 1: inside the function, JavaScript sees let a.
-Step 2: this local a hides the global a.
-Step 3: console.log(a) happens before let a = 2.
-Step 4: because of that, it gives ReferenceError.
+Step 1: inside the function, JavaScript sees `let a`.
+Step 2: that local `a` shadows the global `a = 1`.
+Step 3: `console.log(a)` runs before the local `a` is initialized.
+Step 4: because `let` is in the Temporal Dead Zone before initialization, JavaScript throws a `ReferenceError`.
 
 Simple idea:
-The function does not use the global a.
-It tries to use the local a, but the local one is not ready yet.
+The function does not use the global `a`.
+It tries to use the local `a`, but that local variable is still in the Temporal Dead Zone.

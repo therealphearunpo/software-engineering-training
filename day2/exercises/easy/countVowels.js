@@ -1,10 +1,19 @@
-// Count vowels in a text
-// Step 1: save vowels
-// Step 2: loop in the text one by one
-// Step 3: change character to lowercase
-// Step 4: if it is vowel, add count
+// Problem: Count how many vowels exist in a text
+//
+// Step 1: make a list of vowels
+// Step 2: loop through the text one character at a time
+// Step 3: convert each character to lowercase
+// Step 4: if the character is a vowel, increase the count
+//
+// Edge cases:
+// - input is not a string
+// - input is an empty string
 
 function countVowels(input) {
+  if (typeof input !== "string") {
+    return 0;
+  }
+
   const vowels = "aeiou";
   let count = 0;
 

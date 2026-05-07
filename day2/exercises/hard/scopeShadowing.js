@@ -1,7 +1,12 @@
-// Practice scope
-// Step 1: make global variable
-// Step 2: make local variable with same name inside function
-// Step 3: print both and see the difference
+// Problem: Practice scope shadowing and understand local vs global values
+//
+// Step 1: create a global variable
+// Step 2: create a local variable with the same name inside a function
+// Step 3: print both values to compare them
+//
+// Edge cases:
+// - local variables only exist inside their block
+// - a local variable with the same name hides the global variable
 
 let a = 10;
 
