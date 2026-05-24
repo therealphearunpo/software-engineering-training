@@ -1,29 +1,53 @@
-// Step1: create array with duplicates
-// Step2: create function to remove duplicates
-// Step3: call function and print result
-// Step4: add if not found
+/*
+INPUT?
+- arr: array of values
+
+OUTPUT?
+- new array without duplicate values
+
+EDGE CASES?
+- not an array -> return null
+- empty array -> return []
+- mixed values are allowed
+- keep the first version of each value
+
+STEPS?
+1. Check the input.
+2. Create an empty result array.
+3. Loop through the input array.
+4. Check whether the current value already exists in result.
+5. If it does not exist, add it.
+6. Return result.
+
+TIME COMPLEXITY?
+- O(n^2) because of nested loops
+*/
 
 const arr = [1, 2, 2, 3, 3];
 
 function removeDuplicates(arr) {
-    let result = []; // let result = empty array
+    if (!Array.isArray(arr)) {
+        return null;
+    }
+
+    const result = [];
 
     for (let i = 0; i < arr.length; i++) {
-        let exist = false; // if exist = false -> not exist
+        let exists = false;
 
-        for (let j = 0; j < result.length; j++) { // loop to find the duplicate value
-            if (arr[i] === result[j]) { // if array[index1] === result[index1] -> exist = true
-                exist = true;
-                break; // finish loop
+        for (let j = 0; j < result.length; j++) {
+            if (arr[i] === result[j]) {
+                exists = true;
+                break;
             }
         }
 
-        if (!exist) { // If the variable exist is false, then add the current element arr[i] into the result array.
+        if (!exists) {
             result.push(arr[i]);
         }
     }
-    return result; // return the result to function
+
+    return result;
 }
 
-
-console.log(removeDuplicates(arr)); // print the function
+console.log(removeDuplicates(arr));

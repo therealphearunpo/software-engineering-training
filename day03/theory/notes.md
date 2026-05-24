@@ -1,77 +1,89 @@
->>> Day 3 <<<
+# Day 3 Notes
 
-1. What is an Array?
-- Definition: An array is a list that stores multiple values in order.
-- Example: let numbers = [10, 20, 30];
+## 1. What is an array?
+- An array stores multiple values in one ordered list.
+- Example:
 
-2. Access Array Values
-- Syntax: arrayName[index]
-- Example: console.log(numbers[0]); // Output: 10
-- Example: console.log(numbers[1]); // Output: 20
-- Note: Index starts at 0.
+```js
+const numbers = [10, 20, 30];
+```
 
-3. Update Array Values
-- Syntax: arrayName[index] = newValue
-- Example: numbers[1] = 99; 
-- Result: [10, 99, 30]
-- Example: console.log(numbers[1]); // Output: 99
+## 2. Access array values
+- Syntax: `arrayName[index]`
+- Arrays start at index `0`
 
-4. Loop Through Arrays
-- Using for loop:
-  for (let i = 0; i < numbers.length; i++) {
-    console.log("Index: " + i + " -> Value: " + numbers[i]);
-  }
+```js
+console.log(numbers[0]); // 10
+console.log(numbers[1]); // 20
+```
 
-- Using while loop:
-  let i = 0;
-  while (i < numbers.length) {
-    console.log("Index: " + i + " -> Value: " + numbers[i]);
+## 3. Update array values
+- Syntax: `arrayName[index] = newValue`
+
+```js
+numbers[1] = 99;
+console.log(numbers); // [10, 99, 30]
+```
+
+## 4. Loop through arrays
+- `for` loop:
+
+```js
+for (let i = 0; i < numbers.length; i++) {
+    console.log("Index:", i, "Value:", numbers[i]);
+}
+```
+
+- `while` loop:
+
+```js
+let i = 0;
+
+while (i < numbers.length) {
+    console.log(numbers[i]);
     i++;
-  }
+}
+```
 
-- Using for...of loop:
-  for (let n of numbers) {
-    console.log(n);
-  }
+- `for...of` loop:
 
-5. Practice Examples
-- Update array value:
-  let numbers = [10, 20, 30];
-  numbers[1] = 99;
-  // Result: [10, 99, 30]
+```js
+for (const number of numbers) {
+    console.log(number);
+}
+```
 
-- Empty array:
-  let numbers2 = [];
-  console.log(numbers2);
+## 5. Important array edge cases
+- Empty array: `[]`
+- One value: `[5]`
+- Duplicate values: `[1, 1, 2, 2]`
+- Negative numbers: `[-1, -5, 3]`
+- Invalid input: `"hello"` or `null`
 
-- One value:
-  let numbers3 = [1];
-  console.log(numbers3[0]); // Output: 1
+## 6. Engineering thinking before coding
+Write these comments before you solve a problem:
 
-- Duplicate values:
-  let numbers4 = [1, 1, 2, 2, 3];
-  console.log(numbers4[1]); // Output: 1
+```js
+// INPUT?
+// OUTPUT?
+// EDGE CASES?
+// STEPS?
+// TIME COMPLEXITY?
+```
 
-# ENGINEERING THINKING #
-The core of software engineer is before solving any problem:
-//Input? What's input need?
-//Output? What's the expected ouput?
-//EDGE Case?
-//Steps? What's the total steps of the process?
+## 7. Example thinking for array problems
+- Input:
+  an array of numbers
+- Output:
+  maybe the sum, smallest number, or duplicate-free array
+- Edge cases:
+  empty array, invalid input, duplicate values, negative numbers
+- Steps:
+  solve the problem in simple order before writing code
+- Time complexity:
+  check whether you use one loop `O(n)` or nested loops `O(n^2)`
 
-EDGE CASES (VERY IMPORTANT)
-
-Examples:
-[]
-[5]
-[-1, -5]
-# What if array is empty?
-If array empty it will nothing to display.
-
-# What if only one value exists?
-It's doesn't matter, if array having only one value it's will show only one value.
-
-# What if values are duplicated?
-If array having duplicate value, it's normal because the number in the list can be
-duplicate but the index is can not dupicate.
-
+## 8. Why this matters
+- Syntax helps you write code.
+- Problem solving helps you design correct code.
+- Engineering thinking helps your code survive edge cases.

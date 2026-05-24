@@ -1,22 +1,46 @@
-// Step1 Create empty object
-// Step2 Loop through the array
-// Step3 Loop to find frequency
-// Step4 if not exist result = 1
+/*
+INPUT?
+- arr: array of values
 
+OUTPUT?
+- object that stores how many times each value appears
+
+EDGE CASES?
+- not an array -> return null
+- empty array -> return {}
+- duplicate values should increase the count
+
+STEPS?
+1. Check the input.
+2. Create an empty object.
+3. Loop through the array.
+4. Increase the count for each value.
+5. Return the object.
+
+TIME COMPLEXITY?
+- O(n)
+*/
 
 const arr = [1, 1, 2, 3, 3, 3];
 
 function frequencyCounter(arr) {
-    let result = {};
-    for (let i = 0; i < arr.length; i++) {
-        let num = arr[i];
+    if (!Array.isArray(arr)) {
+        return null;
+    }
 
-        if (result[num]) {
-            result[num]++;
+    const result = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        const value = arr[i];
+
+        if (result[value] === undefined) {
+            result[value] = 1;
         } else {
-            result[num] = 1;
+            result[value]++;
         }
     }
+
     return result;
 }
+
 console.log(frequencyCounter(arr));
