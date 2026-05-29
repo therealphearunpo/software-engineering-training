@@ -74,3 +74,52 @@ let students = [
 
     // DATA STRUCTURE?
 ```
+
+# DEFENSIVE PROGRAMMING
+
+- Defensive programming means checking data before using it.
+- Real software should not assume input is always correct.
+
+```js
+function isValidScore(score) {
+    return typeof score === "number" && !Number.isNaN(score) && score >= 0 && score <= 100;
+}
+```
+
+# DATA MODELING
+
+- Data modeling means choosing a clear shape for the data.
+- Example student model:
+
+```js
+let student = {
+    name: "John",
+    score: 90
+};
+```
+
+- Good student data should have:
+    - valid name
+    - valid score
+    - no duplicate name when names are used as identifiers
+
+# COMMON DAY 4 SYSTEM METHODS
+
+```js
+addStudent(name, score);
+searchStudent(name);
+updateStudent(name, score);
+deleteStudent(name);
+sortStudentsByScore();
+getGradeStats();
+```
+
+# IMPORTANT EDGE CASES
+
+- Empty name.
+- Score below 0.
+- Score above 100.
+- Score is not a number.
+- Duplicate student name.
+- Student not found.
+- Empty student list.

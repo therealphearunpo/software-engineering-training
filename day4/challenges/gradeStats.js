@@ -1,4 +1,4 @@
-// Challenge: group students by grade with defensive input validation.
+// HARD CHALLENGE 3: Count how many students are in each grade.
 
 function isValidStudent(student) {
     return student !== null &&
@@ -31,17 +31,17 @@ function getGrade(score) {
     return "F";
 }
 
-function groupByGrade(students) {
+function getGradeStats(students) {
     if (!Array.isArray(students)) {
         return null;
     }
 
-    let gradeGroups = {
-        A: [],
-        B: [],
-        C: [],
-        D: [],
-        F: []
+    let stats = {
+        A: 0,
+        B: 0,
+        C: 0,
+        D: 0,
+        F: 0
     };
 
     for (let i = 0; i < students.length; i++) {
@@ -50,22 +50,18 @@ function groupByGrade(students) {
         }
 
         let grade = getGrade(students[i].score);
-        gradeGroups[grade].push(students[i]);
+        stats[grade]++;
     }
 
-    return gradeGroups;
+    return stats;
 }
 
 let students = [
-    { name: "Tak", score: 90 },
-    { name: "Tota", score: 78 },
-    { name: "Phearun", score: 98 },
-    { name: "Nin", score: 61 },
-    { name: "John", score: 80 },
-    { name: "Nak", score: 79 },
-    { name: "Na", score: 97 },
-    { name: "Re", score: 67 },
-    { name: "H2O", score: 58 }
+    { name: "Mike", score: 95 },
+    { name: "John", score: 70 },
+    { name: "Sophea", score: 88 },
+    { name: "Dara", score: 95 },
+    { name: "Nita", score: 45 }
 ];
 
-console.log(groupByGrade(students));
+console.log(getGradeStats(students));
